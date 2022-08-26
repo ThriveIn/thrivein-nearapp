@@ -1,0 +1,1 @@
+/Users/ramidjebari/Desktop/thrivein-nearapp/thrivein-nearapp/thrivein/contract/target/wasm32-unknown-unknown/release/hello_near.wasm: /Users/ramidjebari/Desktop/thrivein-nearapp/thrivein-nearapp/thrivein/contract/src/lib.rs

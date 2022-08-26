@@ -1,0 +1,10 @@
+/Users/ramidjebari/Desktop/thrivein-nearapp/thrivein-nearapp/thrivein/integration-tests/target/debug/deps/near_account_id-9ae0dd176c277bf0.rmeta: /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/lib.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/errors.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/borsh.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/serde.rs
+
+/Users/ramidjebari/Desktop/thrivein-nearapp/thrivein-nearapp/thrivein/integration-tests/target/debug/deps/libnear_account_id-9ae0dd176c277bf0.rlib: /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/lib.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/errors.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/borsh.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/serde.rs
+
+/Users/ramidjebari/Desktop/thrivein-nearapp/thrivein-nearapp/thrivein/integration-tests/target/debug/deps/near_account_id-9ae0dd176c277bf0.d: /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/lib.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/errors.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/borsh.rs /Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/serde.rs
+
+/Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/lib.rs:
+/Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/errors.rs:
+/Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/borsh.rs:
+/Users/ramidjebari/.cargo/registry/src/github.com-1ecc6299db9ec823/near-account-id-0.14.0/src/serde.rs:
