@@ -23,7 +23,7 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
-    await PublicAxios.post("/api/users", data);
+    await PublicAxios.post("/api/auth/signup", data);
   };
 
   return (

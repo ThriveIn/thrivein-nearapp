@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+import { PublicAxios } from "api/Axios";
+
 type Inputs = {
   email: string;
   password: string;
@@ -17,8 +19,16 @@ const Login = () => {
 
   const [loginMode, setLoginMode] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
 
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async data => {
+    try {
+      const res = await PublicAxios.post("/api/auth/signin", data);
+      console.log({ res });
+    } catch (err) {
+      setError(err?.message);
+    }
+  };
 
   return (
     <div
@@ -53,16 +63,20 @@ const Login = () => {
           </>
         ) : null}
         {loginMode === "EMAIL" ? (
-          <form
-            className='mt-10 flex flex-col gap-8 w-[400px]'
-            onSubmit={handleSubmit(onSubmit)}
-          >
+          <form className='mt-10 w-[400px]' onSubmit={handleSubmit(onSubmit)}>
             <input
-              className='px-5 py-[30px] text-input border-2 border-input border-opacity-50 rounded-full'
+              className={`px-5 py-[30px] text-input border-2 border-input border-opacity-50 rounded-full w-full ${
+                error ? "border-[2.5px] border-error" : ""
+              }`}
               placeholder='Email'
               {...register("email", { required: true })}
             />
-            <div className='relative px-5 py-[30px] border-2 border-input border-opacity-50 rounded-full w-full flex items-center gap-2'>
+            {error && (
+              <p className='mt-2 text-xs font-semibold pl-6 text-error'>
+                {error}
+              </p>
+            )}
+            <div className='relative mt-6 px-5 py-[30px] border-2 border-input border-opacity-50 rounded-full w-full flex items-center gap-2'>
               <div className='flex-grow flex pr-2 gap-2 items-center'>
                 <input
                   className='text-input outline-none flex-grow items-center'
@@ -84,8 +98,8 @@ const Login = () => {
               </span>
             </div>
             <button
-              className='px-8 py-6 text-white text-xl leading-none font-semibold border-2 border-button bg-button rounded-full uppercase flex items-center justify-center w-full cursor-pointer'
-              type='button'
+              className='px-8 py-6 mt-6 text-white text-xl leading-none font-semibold border-2 border-button bg-button rounded-full uppercase flex items-center justify-center w-full cursor-pointer'
+              type='submit'
             >
               Log in
             </button>

@@ -10,6 +10,7 @@ module.exports = {
         button: "#FF41A9",
         gray: "#7E7D7D",
         input: "#595858",
+        error: "#FF0404",
       },
       backgroundColor: {
         button: "#FF41A9",
@@ -19,6 +20,7 @@ module.exports = {
         button: "#FF41A9",
         gray: "#7E7D7D",
         input: "#595858",
+        error: "#FF0404",
       },
     },
   },
