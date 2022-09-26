@@ -60,7 +60,7 @@ const signin = (req, res) => {
   if (!passwordIsValid) {
     return res.status(401).send({
       accessToken: null,
-      message: "Invalid Password!",
+      message: "We couldn't find an account with this email. Please try again.",
     });
   }
   var token = jwt.sign({ email: user.email }, config.secret, {
