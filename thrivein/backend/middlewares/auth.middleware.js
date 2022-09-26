@@ -34,7 +34,9 @@ const verifyConfirmationToken = async (req, res, next) => {
 const checkUserStatus = async (req, res, next) => {
   const user = await userService.getUserFromEmail(req.body.email);
   if (!user) {
-    return res.status(404).send({ message: "User not found" });
+    return res.status(404).send({
+      message: "We couldn't find an account with this email. Please try again.",
+    });
   }
   if (user.status === "Pending") {
     return res.status(401).send({
