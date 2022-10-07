@@ -15,6 +15,7 @@ module.exports = {
       backgroundColor: {
         button: "#FF41A9",
         gray: "#7E7D7D",
+        main: "rgba(240, 239, 239, 0.5)",
       },
       borderColor: {
         button: "#FF41A9",

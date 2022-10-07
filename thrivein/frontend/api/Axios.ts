@@ -29,7 +29,8 @@ AuthenticatedAxios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND;
 AuthenticatedAxios.interceptors.request.use(
   function (config) {
     // Do something before request is sent
-    return { ...config, withCredentials: true };
+    const authToken = localStorage.getItem("auth_token");
+    return { ...config, withCredentials: true, authorization: authToken };
   },
   function (error) {
     // Do something with request error

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { PublicAxios } from "api/Axios";
+import { useUserFacade } from "state";
 
 type Inputs = {
   email: string;
@@ -16,19 +18,21 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm<Inputs>();
+  const router = useRouter();
+  const { loginUser, userState } = useUserFacade();
 
   const [loginMode, setLoginMode] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
-    try {
-      const res = await PublicAxios.post("/api/auth/signin", data);
-      console.log({ res });
-    } catch (err) {
-      setError(err?.message);
-    }
+    loginUser(data);
   };
+
+  useEffect(() => {
+    if (userState.isLoggedIn) {
+      router.push("/profile");
+    }
+  }, [userState]);
 
   return (
     <div
@@ -66,14 +70,14 @@ const Login = () => {
           <form className='mt-10 w-[400px]' onSubmit={handleSubmit(onSubmit)}>
             <input
               className={`px-5 py-[30px] text-input border-2 border-input border-opacity-50 rounded-full w-full ${
-                error ? "border-[2.5px] border-error" : ""
+                userState.error ? "border-[2.5px] border-error" : ""
               }`}
               placeholder='Email'
               {...register("email", { required: true })}
             />
-            {error && (
+            {userState.error && (
               <p className='mt-2 text-xs font-semibold pl-6 text-error'>
-                {error}
+                {userState.error}
               </p>
             )}
             <div className='relative mt-6 px-5 py-[30px] border-2 border-input border-opacity-50 rounded-full w-full flex items-center gap-2'>
