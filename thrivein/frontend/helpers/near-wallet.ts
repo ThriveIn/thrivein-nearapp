@@ -23,6 +23,7 @@ export class Wallet {
   wallet;
   network;
   createAccessKeyFor;
+  accountId;
 
   constructor({ createAccessKeyFor = undefined, network = "testnet" }) {
     // Login to a wallet passing a contractId will create a local
@@ -38,8 +39,8 @@ export class Wallet {
     this.walletSelector = await setupWalletSelector({
       network: this.network,
       modules: [
-        setupMyNearWallet({ iconUrl: MyNearIconUrl }),
-        setupLedger({ iconUrl: LedgerIconUrl }),
+        setupMyNearWallet({ iconUrl: MyNearIconUrl.src }),
+        setupLedger({ iconUrl: LedgerIconUrl.src }),
       ],
     });
 
@@ -83,7 +84,7 @@ export class Wallet {
       args_base64: Buffer.from(JSON.stringify(args)).toString("base64"),
       finality: "optimistic",
     });
-    return JSON.parse(Buffer.from(res.result).toString());
+    return JSON.parse(Buffer.from((res as any).result).toString());
   }
 
   // Call a method that changes the contract's state
