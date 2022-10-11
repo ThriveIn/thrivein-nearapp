@@ -4,14 +4,14 @@ import Layout from "../components/Layout";
 const IndexPage = () => (
   <div className='bg-white'>
     <div className='max-w-[1920px] w-full px-10 py-8 flex items-center justify-between'>
-      <div className='flex gap-40 items-center'>
+      <div className='flex gap-40 items-center xl:gap-10'>
         <Link href='/'>
           <a className='flex items-center gap-3 text-3xl font-extrabold'>
             <img src='/assets/images/logo.png' alt='ThriveIN' />
             ThriveIN
           </a>
         </Link>
-        <div className='grid grid-cols-3 gap-40'>
+        <div className='grid grid-cols-3 gap-40 xl:gap-10'>
           <Link href='/'>
             <a href='/' className='text-black text-xl'>
               HOME
@@ -40,7 +40,7 @@ const IndexPage = () => (
         </Link>
       </div>
     </div>
-    <div className='px-96 pt-24'>
+    <div className='px-96 pt-24 xl:px-32 xl:pt-16'>
       <p className='w-[600px] text-[#121010] text-5xl leading-normal capitalize'>
         next generation social platform designed <br />
         <span className='text-button'>for the creative economy</span>.
