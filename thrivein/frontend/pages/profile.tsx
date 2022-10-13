@@ -8,13 +8,13 @@ const Profile = () => {
   return (
     <Layout>
       <div className='flex h-full'>
-        <div className='w-[400px] bg-white' />
+        <div className='w-[400px] bg-white xl:w-[300px]' />
         <div className='bg-main rounded-tl-[30px] p-10 flex-grow'>
-          <div className='flex gap-36 px-10 py-8 bg-white rounded-[30px]'>
+          <div className='flex gap-36 px-10 py-8 bg-white rounded-[30px] xl:gap-10 xl:px-5 xl:py-4'>
             <div className='flex items-start gap-8 flex-shrink-0'>
               <div className='flex flex-col justify-center items-center gap-4'>
                 <img
-                  className='w-52 h-52 rounded-full'
+                  className='w-52 h-52 rounded-full xl:w-32 xl:h-32'
                   src='/assets/images/default_avatar.png'
                 />
                 <button className='px-10 py-2 rounded-full border border-button text-input text-xs font-semibold'>
@@ -27,7 +27,7 @@ const Profile = () => {
                     Name
                   </div>
                 </div>
-                <div className='w-full min-w-[265px] h-0 mt-4 mb-4 border border-input opacity-50' />
+                <div className='w-full min-w-[265px] h-0 mt-4 mb-4 border border-input opacity-50 xl:min-w-[150px]' />
                 <div>
                   <div className='text-input opacity-50 text-lg cursor-pointer border border-dashed border-input border-opacity-50 inline-block'>
                     Job

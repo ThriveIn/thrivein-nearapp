@@ -50,7 +50,7 @@ const IndexPage = () => (
       </p>
     </div>
     <img
-      className='w-full mt-auto fixed left-0 bottom-0'
+      className='w-full mt-auto fixed left-0 bottom-0 xl:h-[130px]'
       src='/assets/images/landing_bottom.png'
       alt='ThriveIN'
     />
