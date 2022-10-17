@@ -1,8 +1,8 @@
 import db from "../models/index.js";
 
-const User = db.users;
+const User = db.user;
 
-let getUserFromEmail = async email => {
+let getUserFromEmail = async (email) => {
   try {
     const user = await User.findOne({
       email,
@@ -13,7 +13,7 @@ let getUserFromEmail = async email => {
   }
 };
 
-let getUserFromId = async _id => {
+let getUserFromId = async (_id) => {
   try {
     const user = await User.findOne({
       _id,
@@ -24,7 +24,7 @@ let getUserFromId = async _id => {
   }
 };
 
-let getUserFromConfirmationCode = async confirmationCode => {
+let getUserFromConfirmationCode = async (confirmationCode) => {
   try {
     const user = await User.findOne({
       confirmationCode,

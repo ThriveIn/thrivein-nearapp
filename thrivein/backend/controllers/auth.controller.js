@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 import { tokenService, userService } from "../services/index.js";
 import crypto from "crypto";
 
-const User = db.users;
+const User = db.user;
 const Token = db.token;
 
 const register = (req, res) => {
@@ -20,7 +20,7 @@ const register = (req, res) => {
     password: bcrypt.hashSync(password, 8),
     confirmationCode: token,
   });
-  user.save(err => {
+  user.save((err) => {
     if (err) {
       res.status(500).send({ message: err });
       return;
@@ -43,7 +43,7 @@ const register = (req, res) => {
 const verifyUserEmail = (req, res) => {
   const user = req._user;
   user.status = "Active";
-  user.save(err => {
+  user.save((err) => {
     if (err) {
       res.status(500).send({ message: err });
       return;
@@ -60,7 +60,7 @@ const signin = (req, res) => {
   if (!passwordIsValid) {
     return res.status(401).send({
       accessToken: null,
-      message: "Invalid Password!",
+      message: "We couldn't find an account with this email. Please try again.",
     });
   }
   var token = jwt.sign({ email: user.email }, config.secret, {
@@ -92,7 +92,7 @@ const requestPasswordReset = async (req, res) => {
     token: hash,
     createdAt: Date.now(),
   });
-  newToken.save(err => {
+  newToken.save((err) => {
     if (err) {
       res.status(500).send({ message: err });
       return;

@@ -18,7 +18,7 @@ const checkDuplicateEmail = async (req, res, next) => {
 const verifyConfirmationToken = async (req, res, next) => {
   const token = req.params.confirmationCode;
   const user = await userService.getUserFromConfirmationCode(token);
-  jwt.verify(token, config.verifySecretKey, err => {
+  jwt.verify(token, config.verifySecretKey, (err) => {
     if (err || !user) {
       return res.status(401).send({ message: "Invalid token!" });
     } else if (user.status === "Active") {
@@ -32,10 +32,11 @@ const verifyConfirmationToken = async (req, res, next) => {
 };
 
 const checkUserStatus = async (req, res, next) => {
-  console.log({ req });
   const user = await userService.getUserFromEmail(req.body.email);
   if (!user) {
-    return res.status(404).send({ message: "User not found" });
+    return res.status(404).send({
+      message: "We couldn't find an account with this email. Please try again.",
+    });
   }
   if (user.status === "Pending") {
     return res.status(401).send({
@@ -70,4 +71,5 @@ export const authUser = {
   checkDuplicateEmail,
   verifyConfirmationToken,
   checkUserStatus,
+  verifyToken,
 };
