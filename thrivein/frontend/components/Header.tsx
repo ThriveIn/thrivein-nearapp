@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className='w-full py-8 flex items-center'>
+    <div className='w-full flex items-center h-[120px] flex-shrink-0'>
       <div className='w-[400px] pl-10'>
         <div className='flex items-center gap-3'>
           <img src='/assets/images/logo.png' alt='ThriveIn' />

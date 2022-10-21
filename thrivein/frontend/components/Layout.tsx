@@ -9,8 +9,8 @@ type Props = {
   title?: string;
 };
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div className='h-screen flex flex-col'>
+const Layout = ({ children, title = "ThriveIN" }: Props) => (
+  <div className='h-screen flex flex-col overflow-hidden'>
     <Head>
       <title>{title}</title>
       <meta charSet='utf-8' />
