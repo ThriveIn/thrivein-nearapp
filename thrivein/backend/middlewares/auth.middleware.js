@@ -71,4 +71,5 @@ export const authUser = {
   checkDuplicateEmail,
   verifyConfirmationToken,
   checkUserStatus,
+  verifyToken,
 };
